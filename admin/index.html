@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr-MA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>MarocGrow — Gestion du blog</title>
+  <style>
+    :root{
+      --bg:#f6f3ed;--card:#fff;--text:#171611;--muted:#747066;--gold:#b8924e;
+      --border:#ddd5c6;--black:#11100d;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);font-family:Inter,Arial,sans-serif;color:var(--text)}
+    .top{padding:22px 7%;border-top:2px solid var(--black);border-bottom:1px solid var(--border);
+      display:flex;justify-content:space-between;align-items:center;background:rgba(246,243,237,.98);
+      position:sticky;top:0}
+    .brand{font-family:Georgia,serif;letter-spacing:.16em;font-size:22px}
+    .wrap{max-width:1000px;margin:0 auto;padding:64px 24px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--gold)}
+    h1{font-family:Georgia,serif;font-size:48px;font-weight:400;margin:12px 0 12px}
+    .lead{color:var(--muted);line-height:1.7;max-width:760px}
+    .notice{margin:28px 0;padding:18px 20px;border:1px solid var(--border);background:#fffaf0;border-radius:14px;
+      color:#5d5649;line-height:1.6}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px}
+    label{display:block;font-size:12px;margin:14px 0 7px;color:var(--muted)}
+    input,textarea,select{width:100%;border:1px solid var(--border);border-radius:10px;padding:12px;
+      font:inherit;background:#fff;color:var(--text)}
+    textarea{min-height:190px;resize:vertical}
+    button{margin-top:18px;border:0;border-radius:10px;background:var(--black);color:#fff;padding:13px 18px;
+      font:inherit;font-weight:600;cursor:pointer}
+    button[disabled]{opacity:.45;cursor:not-allowed}
+    .steps{margin:0;padding-left:20px;color:var(--muted);line-height:1.8}
+    .status{font-size:12px;padding:8px 10px;border-radius:999px;background:#eee8dc;display:inline-block}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}h1{font-size:38px}}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">MAROCGROW</div>
+    <span class="status">CMS ready</span>
+  </div>
+
+  <main class="wrap">
+    <div class="eyebrow">Administration du blog</div>
+    <h1>Publier sans toucher au code.</h1>
+    <p class="lead">
+      Cette interface est préparée pour devenir ton espace de publication : titre, catégorie,
+      résumé, contenu puis publication. Le design public du site ne change pas.
+    </p>
+
+    <div class="notice">
+      <strong>Dernière étape nécessaire :</strong> connecter cette interface à ton hébergement
+      ou à un dépôt Git pour que le bouton « Publier » puisse réellement créer les fichiers
+      sur le serveur. Sans cette connexion, un navigateur ne peut pas modifier tout seul
+      les fichiers publics de ton site.
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <h2 style="font-family:Georgia,serif;font-weight:400">Nouvel article</h2>
+        <label for="title">Titre</label>
+        <input id="title" placeholder="Ex. Comment automatiser son entreprise au Maroc ?">
+
+        <label for="category">Catégorie</label>
+        <select id="category">
+          <option>Transformation digitale · Maroc</option>
+          <option>Automatisation · PME · Maroc</option>
+          <option>SEO · GEO · AEO · Maroc</option>
+          <option>Personal Branding · Maroc</option>
+          <option>Entrepreneuriat féminin · Maroc</option>
+        </select>
+
+        <label for="excerpt">Résumé</label>
+        <textarea id="excerpt" style="min-height:90px" placeholder="2 à 3 lignes visibles sur la page d’accueil."></textarea>
+
+        <label for="content">Contenu de l’article</label>
+        <textarea id="content" placeholder="Écris ton article ici..."></textarea>
+
+        <button disabled title="À activer après connexion au backend">Publier</button>
+      </section>
+
+      <aside class="card">
+        <h2 style="font-family:Georgia,serif;font-weight:400">Fonctionnement final</h2>
+        <ol class="steps">
+          <li>Tu ouvres <strong>/admin/</strong>.</li>
+          <li>Tu écris le titre, le résumé et le contenu.</li>
+          <li>Tu cliques sur <strong>Publier</strong>.</li>
+          <li>La nouvelle URL est créée dans <strong>/blog/</strong>.</li>
+          <li>La carte apparaît automatiquement sur l’accueil.</li>
+          <li>Le sitemap est mis à jour automatiquement.</li>
+        </ol>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

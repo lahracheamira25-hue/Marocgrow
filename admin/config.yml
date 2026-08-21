@@ -1,0 +1,22 @@
+# MarocGrow — configuration CMS prête à connecter
+# Le backend doit être renseigné selon l'hébergement choisi.
+
+backend:
+  name: PLACEHOLDER_BACKEND
+
+media_folder: "assets/images/blog"
+public_folder: "/assets/images/blog"
+
+collections:
+  - name: "blog"
+    label: "Articles"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Catégorie", name: "category", widget: "string" }
+      - { label: "Résumé", name: "excerpt", widget: "text" }
+      - { label: "Statut", name: "status", widget: "select", options: ["draft", "published"], default: "draft" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
